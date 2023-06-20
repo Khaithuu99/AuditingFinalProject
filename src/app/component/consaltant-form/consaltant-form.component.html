@@ -1,0 +1,41 @@
+
+
+<form class="row g-3" [formGroup]="consultantForm" (ngSubmit)="addConsultant()">
+  <div class="col-md-6">
+    
+    <label for="inputfname4" class="form-label">Firm Name</label>
+    <input type="text" class="form-control" id="inputfname4" name="firmname" placeholder="Your firm name.." formControlName="firmName" required>
+  </div>
+  <div class="col-md-6">
+    <label for="inputfirmtype4" class="form-label">Firm Type</label>
+    <select name="firmtype" class="form-select" id="inputfirmtype4" formControlName="firmType" required>
+      <option value="public">Public Sector</option>
+      <option value="private">Private Sector</option>
+    </select>
+    <!-- <input type="password" class="form-control" id="inputPassword4"> -->
+  </div>
+ 
+ 
+  <div class="col-md-6">
+    <label for="inputfinancialyear" class="form-label">Consultancy Date</label>
+    <input type="date" id="date" class="form-control" formControlName="financialYear" required>
+
+  </div>
+
+  <div class="col-md-6">
+    
+    <label for="inputplace4" class="form-label">Firm Location</label>
+    <input type="text" class="form-control" id="inputplace4" name="place" placeholder="Your Location.." formControlName="place" required>
+  </div>
+  <div class="col-md-12">
+    <label for="inputfirmtype4" class="form-label">Consultancy</label>
+    <select name="firmtype" class="form-select" id="inputfirmtype4" formControlName="consultant" required>
+      <option value="tax">Tax Consultancy</option>
+      <option value="business">Business Consultancy</option>
+    </select>
+    
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-success">Submit</button>
+  </div>
+</form>

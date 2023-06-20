@@ -1,0 +1,39 @@
+
+
+  <form class="row g-3" [formGroup]="auditForm" (ngSubmit)="addAudit()">
+    <div class="col-md-6">
+      
+      <label for="inputfname4" class="form-label">Firm Name</label>
+      <input type="text" class="form-control" id="inputfname4" name="firstname" placeholder="Your firm name.." formControlName="firmName">
+    </div>
+    <div class="col-md-6">
+      <label for="inputfirmtype4" class="form-label">Firm Type</label>
+      <select name="firmtype" class="form-select" id="inputfirmtype4" formControlName="firmType">
+        <option value="public">Public Sector</option>
+        <option value="private">Private Sector</option>
+      </select>
+      <!-- <input type="password" class="form-control" id="inputPassword4"> -->
+    </div>
+   
+   
+    <div class="col-md-6">
+      <label for="inputfinancialyear" class="form-label">Financial Year</label>
+      <input type="date" id="date" class="form-control" formControlName="financialYear" >
+
+    </div>
+
+    <div class="col-md-6">
+      
+      <label for="inputplace4" class="form-label">Firm Location</label>
+      <input type="text" class="form-control" id="inputplace4" name="place" placeholder="Your Location.." formControlName="place">
+    </div>
+    <div class="col-md-12">
+      
+      <label for="inputauditarea4" class="form-label">Audit Area</label>
+      <input type="text" class="form-control" id="inputauditarea4" name="auditarea" placeholder="Audit Area.." formControlName="areaAudit">
+    </div>
+  
+    <div class="col-12">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </form>

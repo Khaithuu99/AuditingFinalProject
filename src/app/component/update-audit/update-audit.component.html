@@ -1,0 +1,38 @@
+<h1>Update Infor</h1>
+
+
+  <form class="row g-3" (ngSubmit)="updateAudit()">
+    <div class="col-md-6">
+      
+      <label for="inputfname4" class="form-label">Firm Name</label>
+      <input type="text" class="form-control" name="firmName" placeholder="Your firm name.." [(ngModel)]="audit.firmName">
+    </div>
+    <div class="col-md-6">
+      <label for="inputfirmtype4" class="form-label">Firm Type</label>
+      <select name="firmtype" class="form-select" [(ngModel)]="audit.firmType">
+        <option value="public">Public Sector</option>
+        <option value="private">Private Sector</option>
+      </select>
+    </div>
+   
+    <div class="col-md-6">
+      <label for="inputfinancialyear" class="form-label">Financial Year</label>
+      <input type="date" name="FinancialYear" class="form-control"  [(ngModel)]="audit.financialYear">
+
+    </div>
+
+    <div class="col-md-6">
+      
+      <label for="inputplace4" class="form-label">Firm Location</label>
+      <input type="text" class="form-control" name="Place" placeholder="Your Location.."  [(ngModel)]="audit.place">
+    </div>
+    <div class="col-md-12">
+      
+      <label for="inputauditarea4" class="form-label">Audit Area</label>
+      <input type="text" class="form-control" id="inputauditarea4" name="auditarea" placeholder="Audit Area.."  [(ngModel)]="audit.areaAudit">
+    </div>
+  
+    <div class="col-12">
+      <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </form>

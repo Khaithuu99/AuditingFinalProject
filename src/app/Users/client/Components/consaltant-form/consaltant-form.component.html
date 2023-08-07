@@ -1,0 +1,60 @@
+<div class="container mt-3">
+  
+
+<form class="row g-3" [formGroup]="consultantForm" (ngSubmit)="addConsultant()">
+ 
+  <div class="col-md-6">
+    <label for="inputfirmtype4" class="form-label">Consultancy</label>
+    <select name="firmtype" class="form-select" id="inputfirmtype4" formControlName="consultancyType" required>
+      <option value="tax">Tax Consultancy</option>
+      <option value="business">Business Consultancy</option>
+      <option value="tax">Risk Management</option>
+      <option value="business">Business Process Improvement</option>
+    </select>
+
+  </div>
+  
+    <div class="col-md-6">
+      
+      <label for="inputscope4" class="form-label">Consulting Scope</label>
+      <input type="text" class="form-control" id="inputscope4" name="scope" placeholder="Areas or challenges for consulting.." formControlName="consultancyScope">
+    </div>
+    
+
+  <div class="col-md-6">
+      
+    <label for="inputexpert4" class="form-label">Required Expertise</label>
+    <input type="text" class="form-control" id="inputexpert4" name="expert" 
+    placeholder="The required skills and expertise of the consulting .." formControlName="expert">
+  </div>
+  
+  <div class="col-md-6">
+    <label for="inputfinancialyear" class="form-label">Expected Time</label>
+    <input type="date" id="date" class="form-control" formControlName="financialYear" required>
+
+  </div>
+ 
+  
+  <div class="col-md-12">
+      
+    <label for="inputobjective4" class="form-label">Objectives and Deliverables</label>
+    <input type="text" class="form-control" id="inputobjective4" name="objective" 
+    placeholder="desired outcomes and deliverables.." formControlName="consultancyObjective">
+  </div>
+  
+
+  <div class="col-md-6">
+    <label class="form-label" for="customFile">Budget</label>
+    <input type="file" class="form-control" id="customFile" formControlName="budget">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="customFile">Fee structure</label>
+    <input type="file" class="form-control" id="customFile" formControlName="feeStructure">
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-info">Submit</button>
+  </div>
+</form>
+
+</div>

@@ -1,0 +1,67 @@
+
+<div class="container mt-3 shadow-sm">
+    <form class="row g-3" [formGroup]="contractForm" >
+  
+        <div class="col-md-6">
+            <label  class="form-label">
+                Contract Title:  </label>
+                <input type="text" class="form-control" formControlName="contractTitle" />          
+        </div>
+
+        <div class="col-md-6">
+            <label  class="form-label">
+                Contract Description:</label>
+                <input type="text" class="form-control" formControlName="contractDescription" />
+        </div>
+
+        <div class="col-md-6">
+            <label  class="form-label">
+                Contract Type:</label>
+                <input type="text" class="form-control" class="form-control" formControlName="contractType" />
+              
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">
+                Pricing Details:  </label>
+                <input type="text"  class="form-control"  formControlName="pricingDetails"/>      
+        </div>
+        
+        <div class="col-md-6">
+            <label  class="form-label">
+             
+              Start Date: </label>
+                <input type="date"  class="form-control"  formControlName="startDate" />
+        </div>
+
+        
+        <div class="col-md-6">
+            <label  class="form-label">
+                End Date:  </label>
+                <input type="date"  class="form-control"  formControlName="endDate" />
+             
+        </div>
+
+        <div class="col-md-6">
+            <label  class="form-label">
+                Additional Notes: </label>
+                <textarea  class="form-control"  formControlName="additionalNotes"></textarea>
+              
+        </div>
+    
+        <div class="col-md-6">
+            <label  class="form-label">
+                Terms and Conditions: </label>
+                <textarea  class="form-control"  formControlName="termsAndConditions"></textarea>
+              
+        </div>
+
+<div class="col-md-12">
+    <button type="submit" class="btn btn-info" (click)="createContract()" >Generate Contract</button>
+
+</div>
+        
+
+</form>
+</div>
+

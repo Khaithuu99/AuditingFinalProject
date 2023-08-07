@@ -1,0 +1,92 @@
+<div class="container mt-3 shadow-sm">
+    <form class="row g-3" [formGroup]="accountingForm" (ngSubmit)="addAccount()" >
+
+       
+        
+        <div class="col-md-6">
+            <label for="inputfinancialyear" class="form-label">Starting Date</label>
+            <input type="date" id="date" class="form-control" formControlName="startingDate" >
+            
+        </div>
+
+
+        <div class="col-md-6">
+            <label for="inputfinancialyear" class="form-label">Ending Date</label>
+            <input type="date" id="date" class="form-control" formControlName="endingDate" >
+
+        </div>
+
+  
+
+        <div class="col-md-6">
+            <label class="form-label" for="form3Example1c">Accounting Standard</label>
+            <select name="period" class="form-select" id="inputperiodtype4" formControlName="accountingStandard">
+                <option value="monthly">IFRS</option>
+                <option value="semi">IPSAS</option>
+                <option value="annual">GAAP</option>
+              </select>
+        </div>
+
+
+        <div class="col-md-6">
+            <label class="form-label" for="form3Example1c">Nature Of Business</label>
+            <input type="text" id="form3businessnature1c" class="form-control" formControlName="businessNature">
+        </div>
+
+        
+        <div class="col-md-6">
+          <div class="form-outline flex-fill mb-0">
+            <label class="form-label" for="form3|Example1c">Financial Period</label>
+            <select name="period" class="form-select" id="inputperiodtype4" formControlName="accountingPeriod">
+                <option value="monthly">Monthly</option>
+                <option value="semi">half year</option>
+                <option value="annual">End year</option>
+              </select>
+          </div>
+        </div>
+    
+        <div class="col-md-6">
+          <div class="form-outline flex-fill mb-0">
+
+          <label class="form-label" for="customFile">Previous Financial Statement</label>
+          <input type="file" class="form-control" id="customFile" formControlName="previousFinancialAtatement" >
+        </div>
+        </div>
+
+
+        <div class="col-md-12">
+          <div class="form-outline flex-fill mb-0">
+            <label for="inputfinancialyear" class="form-label">Financial Statements</label>
+            <br>
+        
+            <div class="mb-3 form-check form-check-inline">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" formControlName="needIncomeStatement">
+              <label class="form-check-label" for="exampleCheck1">Income statement</label>
+            </div>
+        
+            <div class="mb-3 form-check form-check-inline">
+              <input type="checkbox" class="form-check-input" id="exampleCheck2" formControlName="needBalanceSheet">
+              <label class="form-check-label" for="exampleCheck2">Balance sheet</label>
+            </div>
+        
+            <div class="mb-3 form-check form-check-inline">
+              <input type="checkbox" class="form-check-input" id="exampleCheck3" formControlName="needcashFlow">
+              <label class="form-check-label" for="exampleCheck3">Cash flow statement</label>
+            </div>
+        
+            <div class="mb-3 form-check form-check-inline">
+              <input type="checkbox" class="form-check-input" id="exampleCheck4" formControlName="needChangeInEquity">
+              <label class="form-check-label" for="exampleCheck4">Statement of changes in equity</label>
+            </div>
+          </div>
+        </div>
+        
+        
+
+
+
+        <div class="col-12">
+          <button title="submit" type="submit" class="btn btn-info">Submit</button>
+        </div></form>
+
+</div>

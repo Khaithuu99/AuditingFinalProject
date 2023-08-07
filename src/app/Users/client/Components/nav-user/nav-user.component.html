@@ -1,0 +1,58 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['home']" ><i
+        class="fas fa-tachometer-alt me-2" ></i>Home</a>
+
+      <a mat-list-item [routerLink]="['audit']"><i
+        class="fas fa-chart-line me-2"></i>Auditing Form</a>
+
+        <a mat-list-item [routerLink]="['audit-list']"><i
+          class="fas fa-shopping-cart me-2"></i>Audit List</a>
+
+        <a mat-list-item [routerLink]="['account']"><i
+          class="fas fa-hand-holding-usd me-2"></i>Accounting Form</a>
+
+          <a mat-list-item [routerLink]="['account-list']"><i
+            class="fas fa-hand-holding-usd me-2"></i>Accounting List</a>
+
+      <a mat-list-item [routerLink]="['consultant']"><i
+        class="fas fa-shopping-cart me-2"></i>Consultancy Form</a>
+
+        <a mat-list-item [routerLink]="['consultancy-list']"><i
+          class="fas fa-shopping-cart me-2"></i>Consultancy List</a>
+      
+      <a mat-list-item (click)="logOut()" ><i
+        class="fas fa-power-off me-2"></i>Logout</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="navbar">
+      <mat-toolbar-row>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>My App</span>
+        <span class="example-spacer"></span>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>person</mat-icon>
+          {{firmName}}</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="['profile']">Profile</button>
+          <button mat-menu-item (click)="logOut()" >Log Out</button>
+        </mat-menu>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

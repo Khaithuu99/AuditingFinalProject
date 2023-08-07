@@ -1,0 +1,75 @@
+
+<div class="container mt-3 shadow-sm">
+      <form class="row g-3" (ngSubmit)="updateAccount()" >
+  
+          <div class="col-md-6">
+              <label for="inputfinancialyear" class="form-label">Starting Date</label>
+              <input type="date" id="date" class="form-control" [(ngModel)]="accounting.startingDate" >
+              
+          </div>
+  
+          <div class="col-md-6">
+              <label for="inputfinancialyear" class="form-label">Ending Date</label>
+              <input type="date" id="date" class="form-control" [(ngModel)]="accounting.endingDate" >
+  
+          </div>
+  
+          <div class="col-md-6">
+              <label class="form-label" for="form3Example1c">Accounting Standard</label>
+              <select name="accountingStandard" class="form-select" id="inputaccountingStandard4" [(ngModel)]="accounting.accountingStandard">
+                  <option value="monthly">IFRS</option>
+                  <option value="semi">IPSAS</option>
+                  <option value="annual">GAAP</option>
+                </select>
+          </div>
+  
+  
+          <div class="col-md-6">
+              <label class="form-label" for="form3Example1c">Nature Of Business</label>
+              <input type="text" id="form3businessnature1c" class="form-control" [(ngModel)]="accounting.businessNature">
+          </div>
+  
+          
+          <div class="col-md-6">
+            <div class="form-outline flex-fill mb-0">
+              <label class="form-label" for="form3|Example1c">Financial Period</label>
+              <select name="period" class="form-select" id="inputperiodtype4" [(ngModel)]="accounting.accountingPeriod">
+                  <option value="monthly">Monthly</option>
+                  <option value="semi">half year</option>
+                  <option value="annual">End year</option>
+                </select>
+            </div>
+          </div>
+      
+          <div class="col-md-6">
+            <label class="form-label" for="customFile">Previous Financial Statement</label>
+            <input type="file" class="form-control" id="customFile" [(ngModel)]="accounting.previousFinancialStatement" >
+          </div>
+  
+  
+          <label for="inputfinancialyear" class="form-label">Financial Statement</label>
+  
+          <div class="mb-3 form-check col-md-6" >
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="accounting.needIncomeStatement">
+            <label class="form-check-label" for="exampleCheck1">Income statement</label>
+          </div>
+          <div class="mb-3 form-check col-md-6">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="accounting.needBalanceSheet">
+            <label class="form-check-label" for="exampleCheck1">Balance sheet</label>
+          </div>
+          <div class="mb-3 form-check col-md-6">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="accounting.needcashFlow">
+            <label class="form-check-label" for="exampleCheck1">Cash flow statement</label>
+          </div>
+          <div class="mb-3 form-check col-md-6">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="accounting.needChangeInEquity">
+            <label class="form-check-label" for="exampleCheck1">Statement of changes in equity</label>
+          </div>
+  
+  <div class="container">
+  
+   <button type="submit" class="btn btn-info">Update</button>
+  </div>
+  </form>
+  
+  </div>

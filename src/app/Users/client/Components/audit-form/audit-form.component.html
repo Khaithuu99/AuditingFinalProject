@@ -1,0 +1,49 @@
+<div class="container mt-3">
+  
+
+  <form class="row g-3" [formGroup]="auditForm" (ngSubmit)="addAudit()">
+   
+      <div class="col-md-6">
+        <label class="form-label" for="form3Example1c">Type Of Auding</label>
+        <select name="period" class="form-select" id="inputperiodtype4" formControlName="auditingType">
+            <option value="monthly">Financial statement audit</option>
+            <option value="semi">Internal audit</option>
+            <option value="annual">Compliance Audit</option>
+          </select>
+      </div>
+      
+    <div class="col-md-6">
+      
+      <label for="inputauditarea4" class="form-label">Audit Scope</label>
+      <input type="text" class="form-control" id="inputauditarea4" name="auditarea" placeholder="Audit Area.." formControlName="areaAudit">
+    </div>
+  
+    <div class="col-md-6">
+      <label for="inputfinancialyear" class="form-label">Financial Year</label>
+      <input type="date" id="date" class="form-control" formControlName="financialYear" >
+
+    </div>
+
+      <div class="col-md-6">
+        <label class="form-label" for="form3Example1c">Auditing Standard</label>
+        <select name="period" class="form-select" id="inputperiodtype4" formControlName="auditingStandard">
+            <option value="monthly">ISA</option>
+            <option value="annual">GAAP</option>
+          </select>
+      </div>
+    
+    <div class="col-md-6">
+      <label class="form-label" for="customFile">Financial Statement</label>
+      <input type="file" class="form-control" id="customFile" formControlName="financialStatement">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label" for="customFile">Previous Audit Findings</label>
+      <input type="file" class="form-control" id="customFile" formControlName="previousAudit">
+    </div>
+
+  
+    <div class="col-12">
+      <button type="submit" class="btn btn-info">Submit</button>
+    </div>
+  </form>
+</div>

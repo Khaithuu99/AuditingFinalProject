@@ -1,0 +1,55 @@
+<div class="container mt-3 shadow-sm">
+  <h1>Update Consultancy Information</h1>
+
+
+  <form class="row g-3" (ngSubmit)="updateConsultant()">
+    <div class="col-md-6">
+      <label for="inputconsultancyType4" class="form-label">Consultancy</label>
+      <select name="consultancyType" class="form-select" id="inputconsultancyType4" [(ngModel)]="consaltant.consultancyType" required>
+        <option value="tax">Tax Consultancy</option>
+        <option value="business">Business Consultancy</option>
+        <option value="tax">Risk Management</option>
+        <option value="business">Business Process Improvement</option>
+      </select>
+      
+    </div>
+
+    <div class="col-md-6">
+      
+      <label for="inputconsultancyScope4" class="form-label">Consulting Scope</label>
+      <input type="text" class="form-control" id="inputconsultancyScope4" name="scope" [(ngModel)]="consaltant.consultancyScope">
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputexpert4" class="form-label">Required Expertise</label>
+      <input type="text" class="form-control" id="inputexpert4" name="expert" [(ngModel)]="consaltant.expert">
+    </div>
+  
+    <div class="col-md-6">
+      <label for="inputfinancialyear" class="form-label">Expected Time</label>
+      <input type="date" name="FinancialYear" class="form-control"  [(ngModel)]="consaltant.financialYear">
+      
+    </div>
+    
+    <div>
+    <label for="inputobjective4" class="form-label">Objectives and Deliverables</label>
+    <input type="text" class="form-control" id="inputObjective4" name="consultancyObjective" [(ngModel)]="consaltant.consultancyObjective">
+  </div>
+  
+  <div class="col-md-6">
+    <label class="form-label" for="customFile">Budget</label>
+    <input type="file" class="form-control" id="customFile" [(ngModel)]="consaltant.budget">
+  </div>
+  <div class="col-md-6">
+    <label class="form-label" for="customFile">Fee structure</label>
+    <input type="file" class="form-control" id="customFile" [(ngModel)]="consaltant.feeStructure">
+  </div>
+
+   
+    <div class="col-12">
+      <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </form>
+
+
+</div>

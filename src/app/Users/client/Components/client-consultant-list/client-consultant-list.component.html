@@ -1,0 +1,62 @@
+<div class="container mt-3 shadow-md">
+    <div class="row my-5">
+        <div class="col-md-6">
+            <h3 class="fs-4 mb-3">My Consultance Requests</h3>
+    
+        </div>
+        <!-- <div class="col-md-6">
+            <button [routerLink]="['../audit']" class="btn btn-success" style="float: right;">Add Audit</button>
+        </div> -->
+    </div>    
+        <div class="row my-5">
+            <div class="col">
+                <table class="table bg-white rounded shadow-sm  table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                            <th scope="col">Financial Year</th>
+                            <th scope="col">Consultancy Type</th>
+                            <th scope="col">Consultancy Scope</th>
+                            <th scope="col">Consultancy Objective</th>
+                            <th scope="col">Expert</th>
+                            <th scope="col">Budget</th>
+                            <th scope="col">Fee Structure</th>
+                            <th scope="col">Approval Status</th>
+                            <th scope="col">Contract Status</th>
+                            <th scope="col">Engagement Date</th>
+                        <th scope="col">Action</th>
+
+                        
+                      </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let x of consultancyList">
+                      <td>{{ x.consultancyId }}</td>
+                      <td>{{ x.financialYear }}</td>
+                      <td>{{ x.consultancyType }}</td>
+                      <td>{{ x.consultancyScope }}</td>
+                      <td>{{ x.consultancyObjective }}</td>
+                      <td>{{ x.expert }}</td>
+                      <td>{{ x.budget }}</td>
+                      <td>{{ x.feeStructure }}</td>
+                      <td>{{ x.approvalStatus }}</td>
+                      <td>{{ x.contractStatus }}</td>
+                      <td>{{ x.engagementDate }}</td>
+                      <td>
+                        <button class="btn" (click)="updateConsultant(x.consultancyId)"><i class="fas fa-edit"></i></button>
+                        <!-- <button class="btn" (click)=" openDeleteConfirmation(x.consultancyId)"><i class="fas fa-trash"></i></button> -->
+                        <button mat-raised-button color="primary" [disabled]="x.contractStatus !== 'Generated'" (click)=" view(x.consultancyId)" >
+                            <i class="fas fa-eye"></i> View Contract
+                          </button>  
+                                              
+                        </td>
+                    </tr>
+                  </tbody>
+                
+            </table>
+        </div>
+    
+    </div>
+    
+    
+</div>

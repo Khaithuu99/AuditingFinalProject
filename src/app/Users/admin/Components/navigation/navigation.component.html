@@ -1,0 +1,71 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['home']" ><i
+        class="fas fa-tachometer-alt me-2" ></i>Home</a>
+      <a mat-list-item [routerLink]="['audit-table']"><i
+        class="fas fa-chart-line me-2"></i>Auditing</a>
+
+        <a mat-list-item [routerLink]="['account-table']"><i
+          class="fas fa-hand-holding-usd me-2"></i>Accounting</a>
+
+      <a mat-list-item [routerLink]="['consaltant-table']"><i
+        class="fas fa-shopping-cart me-2"></i>Consultancy</a>
+        
+        <a mat-list-item [routerLink]="['report']"><i
+        class="fas fa-paperclip me-2"></i>Reports</a>
+
+      <a mat-list-item [routerLink]="['../']"><i
+        class="fas fa-power-off me-2"></i>Logout</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="navbar">
+      <mat-toolbar-row>
+        <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon>menu</mat-icon>
+      </button>
+        <span>My App</span>
+        <span class="example-spacer"></span>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>person</mat-icon>
+          {{adminName}}</button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item [routerLink]="['profile']">Profile</button>
+          <button mat-menu-item (click)="logOut()" >Log Out</button>
+        </mat-menu>
+        
+      </mat-toolbar-row>
+      
+  
+  
+    
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+  
+</mat-sidenav-container>
+<!-- 
+<mat-toolbar>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+   <mat-icon>menu</mat-icon>
+ </button>
+ <span>My App</span>
+ <span class="example-spacer"></span>
+ <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+   <mat-icon>favorite</mat-icon>
+ </button>
+ <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+  <mat-icon>share</mat-icon>
+</button>
+</mat-toolbar> -->

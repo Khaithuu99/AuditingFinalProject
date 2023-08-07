@@ -1,0 +1,48 @@
+<div class="container mt-3 shadow-sm">
+  <h1>Update Infor</h1>
+
+
+  <form class="row g-3" (ngSubmit)="updateAudit()">
+    <div class="col-md-6">
+      <label class="form-label" for="form3Example1c">Type Of Auding</label>
+      <select name="auditingType" class="form-select" id="inputauditingType4" [(ngModel)]="audit.auditingType">
+          <option value="monthly">Financial statement audit</option>
+          <option value="semi">Internal audit</option>
+          <option value="annual">Compliance Audit</option>
+        </select>
+    </div>
+    <div class="col-md-6">      
+      <label for="inputauditarea4" class="form-label">Audit Scope</label>
+      <input type="text" class="form-control" id="inputauditarea4" name="auditarea"  [(ngModel)]="audit.areaAudit">
+    </div>
+   
+    <div class="col-md-6">
+      <label for="inputfinancialyear" class="form-label">Financial Year</label>
+      <input type="date" name="FinancialYear" class="form-control"  [(ngModel)]="audit.financialYear">
+
+    </div>
+
+    
+    
+    <div class="col-md-6">
+      <label class="form-label" for="form3Example1c">Auditing Standard</label>
+      <select name="auditingStandard" class="form-select" id="inputauditingStandard4" [(ngModel)]="audit.auditingStandard">
+          <option value="monthly">ISA</option>
+          <option value="annual">GAAP</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+      <label class="form-label" for="customFile">Financial Statement</label>
+      <input type="file" class="form-control" id="customFile" [(ngModel)]="audit.financialStatement">
+    </div>
+    <div class="col-md-6">
+      <label class="form-label" for="customFile">Previous Audit Findings</label>
+      <input type="file" class="form-control" id="customFile" [(ngModel)]="audit.previousAudit">
+    </div>
+  
+    <div class="col-12">
+      <button type="submit" class="btn btn-success">Update</button>
+    </div>
+  </form>
+
+</div>

@@ -19,7 +19,7 @@ export class ProfileUserComponent {
   }
 
   public fetchClient(){
-    this.clientService.getClientById(localStorage.getItem("id")).subscribe(response =>{
+    this.clientService.getClientById(localStorage.getItem("clientId")).subscribe(response =>{
       this.client = response
       console.log(response)
      

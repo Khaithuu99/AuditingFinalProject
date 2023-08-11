@@ -16,6 +16,7 @@ import { ViewConsultancyComponent } from './Components/view-consultancy/view-con
 import { AdminContractFormComponent } from './Components/admin-contract-form/admin-contract-form.component';
 import { AdminAccountContractFormComponent } from './Components/admin-account-contract-form/admin-account-contract-form.component';
 import { AdminAuditContractFormComponent } from './Components/admin-audit-contract-form/admin-audit-contract-form.component';
+import { AdminContractsListComponent } from './Components/admin-contracts-list/admin-contracts-list.component';
 
 
 
@@ -34,7 +35,8 @@ const routes: Routes = [
   {path:"view-consultancy",component:ViewConsultancyComponent},
   {path:"consultancy-contract", component:AdminContractFormComponent},
   {path:"account-contract", component: AdminAccountContractFormComponent},
-  {path: "audit-contract", component:AdminAuditContractFormComponent}
+  {path: "audit-contract", component:AdminAuditContractFormComponent},
+  {path:"all-contracts", component:AdminContractsListComponent}
 
   ]},
 

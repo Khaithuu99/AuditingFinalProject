@@ -31,4 +31,8 @@ export class ConsultancyService {
     return this.http.put(`${url}/${consultancyId}`,consaltant)
   }
 
+  updateContractStatus(id:number){
+    return this.http.put(`${url}/contractStatus/${id}`,null);
+  }
+
 }

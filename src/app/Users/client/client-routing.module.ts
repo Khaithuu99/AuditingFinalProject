@@ -18,11 +18,12 @@ import { ConsultancyContractViewComponent } from './Components/consultancy-contr
 import { UpdateAuditComponent } from './Components/update-audit/update-audit.component';
 import { UpdateConsaltantComponent } from './Components/update-consaltant/update-consaltant.component';
 import { UpdateAccountingComponent } from './Components/update-accounting/update-accounting.component';
+import { ClientContractsListComponent } from './Components/client-contracts-list/client-contracts-list.component';
 
 
 const routes: Routes = [
-  {path: '', component: RegComponent },
-  {path: 'login', component:ClientLoginComponent},
+  {path: '', component:ClientLoginComponent},
+  {path: 'reg', component: RegComponent },
   {path: 'nav', component:NavUserComponent , children:[
     {path:'profile',component:ProfileUserComponent},
     {path:'request',component:RequestsComponent},
@@ -37,7 +38,8 @@ const routes: Routes = [
     {path:'consultancy-contract-view', component:ConsultancyContractViewComponent},   
   {path:"update-account",component:UpdateAccountingComponent},
   {path:"update-consaltant",component:UpdateConsaltantComponent},
-  {path:"updateaudit",component:UpdateAuditComponent}
+  {path:"updateaudit",component:UpdateAuditComponent},
+  {path:"client-contract", component:ClientContractsListComponent}
 
   ]}
 ];

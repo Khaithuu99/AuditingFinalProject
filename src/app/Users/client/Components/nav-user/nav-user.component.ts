@@ -36,7 +36,7 @@ export class NavUserComponent {
   }
 
   logOut(){
-    this.router.navigate(['Client/login'])
+    this.router.navigate(['Client'])
     localStorage.removeItem("clientId");
     
   }

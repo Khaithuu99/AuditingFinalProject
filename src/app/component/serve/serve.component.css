@@ -21,13 +21,16 @@
     text-align: center;
     margin-right: auto;
     margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
   }
   
   .trip__grid {
     display: grid;
+    max-height:10%;
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
-    margin: 4rem 0;
+    margin: 3rem 0;
   }
   
   .trip__card {
@@ -41,7 +44,7 @@
     display: grid;
     gap: 0.5rem;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 300;
     color: var(--text-dark);
     background-color: var(--extra-light);
     cursor: pointer;

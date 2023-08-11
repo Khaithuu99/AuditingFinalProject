@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UpdateAccountingComponent } from './Components/update-accounting/update-accounting.component';
 import { UpdateAuditComponent } from './Components/update-audit/update-audit.component';
 import { UpdateConsaltantComponent } from './Components/update-consaltant/update-consaltant.component';
+import { NgxPrintModule } from 'ngx-print';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { UpdateConsaltantComponent } from './Components/update-consaltant/update
     ClientRoutingModule,
     ReactiveFormsModule,
     MatButtonModule,
+    NgxPrintModule
     
    
   ]

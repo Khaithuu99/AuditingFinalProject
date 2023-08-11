@@ -1,0 +1,55 @@
+/* component.styles.css */
+.page {
+    position: relative;
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+    width: 21cm;
+    height: 29.7cm;
+  }  
+  .header {
+    padding: 1cm;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  
+  .content {
+    padding: 1cm;
+  }
+  
+  .footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0; /* Add this line to keep the footer within the page width */
+    padding: 1cm;
+    text-align: center;
+    background-color: #f0f0f0;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+  }
+  @media print {
+    .hide-on-print {
+      display: none !important;
+    }
+
+    .page{
+        font-family: 'Times New Roman';
+        font-size: small;
+    }
+  }
+
+  
+  

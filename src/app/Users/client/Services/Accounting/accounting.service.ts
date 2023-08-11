@@ -34,4 +34,8 @@ export class AccountingService {
   deleteAccount(accountId:number){
     return this.http.delete(`${url}/${accountId}`) 
   }
+
+  updateContractStatus(id:number){
+    return this.http.put(`${url}/contractStatus/${id}`,null);
+  }
 }

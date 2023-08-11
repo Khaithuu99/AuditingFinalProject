@@ -38,6 +38,7 @@ import { NavUserComponent } from './Users/client/Components/nav-user/nav-user.co
 import { ClientLoginComponent } from './Users/client/Components/client-login/client-login.component';
 import { CommonModule } from '@angular/common';
 import { RequestsComponent } from './Users/client/Components/requests/requests.component';
+import { NgxPrintModule } from 'ngx-print';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { RequestsComponent } from './Users/client/Components/requests/requests.c
     MatListModule,
     MatButtonModule, 
     MatMenuModule,
+    NgxPrintModule
   ],
   providers: [],
   bootstrap: [AppComponent]

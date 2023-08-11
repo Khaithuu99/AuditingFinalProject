@@ -4,19 +4,22 @@
   
           <div class="col-md-6">
               <label for="inputfinancialyear" class="form-label">Starting Date</label>
-              <input type="date" id="date" class="form-control" [(ngModel)]="accounting.startingDate" >
+              <input type="date" id="date" class="form-control" [(ngModel)]="accounting.startingDate"
+              name="startingDate" >
               
           </div>
   
           <div class="col-md-6">
               <label for="inputfinancialyear" class="form-label">Ending Date</label>
-              <input type="date" id="date" class="form-control" [(ngModel)]="accounting.endingDate" >
+              <input type="date" id="date" class="form-control" [(ngModel)]="accounting.endingDate" 
+              name="endingDate">
   
           </div>
   
           <div class="col-md-6">
               <label class="form-label" for="form3Example1c">Accounting Standard</label>
-              <select name="accountingStandard" class="form-select" id="inputaccountingStandard4" [(ngModel)]="accounting.accountingStandard">
+              <select name="accountingStandard" class="form-select" id="inputaccountingStandard4" [(ngModel)]="accounting.accountingStandard"
+              name="accountingStandard">
                   <option value="monthly">IFRS</option>
                   <option value="semi">IPSAS</option>
                   <option value="annual">GAAP</option>
@@ -26,14 +29,16 @@
   
           <div class="col-md-6">
               <label class="form-label" for="form3Example1c">Nature Of Business</label>
-              <input type="text" id="form3businessnature1c" class="form-control" [(ngModel)]="accounting.businessNature">
+              <input type="text" id="form3businessnature1c" class="form-control" [(ngModel)]="accounting.businessNature"
+              name="natureOfBusiness">
           </div>
   
           
           <div class="col-md-6">
             <div class="form-outline flex-fill mb-0">
               <label class="form-label" for="form3|Example1c">Financial Period</label>
-              <select name="period" class="form-select" id="inputperiodtype4" [(ngModel)]="accounting.accountingPeriod">
+              <select name="period" class="form-select" id="inputperiodtype4" [(ngModel)]="accounting.accountingPeriod"
+              name="accountingPeriod">
                   <option value="monthly">Monthly</option>
                   <option value="semi">half year</option>
                   <option value="annual">End year</option>
@@ -43,26 +48,31 @@
       
           <div class="col-md-6">
             <label class="form-label" for="customFile">Previous Financial Statement</label>
-            <input type="file" class="form-control" id="customFile" [(ngModel)]="accounting.previousFinancialStatement" >
+            <input type="file" class="form-control" id="customFile" [(ngModel)]="accounting.previousFinancialStatement" 
+            name="previousFinancialStatement">
           </div>
   
   
           <label for="inputfinancialyear" class="form-label">Financial Statement</label>
   
           <div class="mb-3 form-check col-md-6" >
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="accounting.needIncomeStatement">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="accounting.needIncomeStatement"
+            name="incomeStatement">
             <label class="form-check-label" for="exampleCheck1">Income statement</label>
           </div>
           <div class="mb-3 form-check col-md-6">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="accounting.needBalanceSheet">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="accounting.needBalanceSheet"
+            name="BalanceSheet">
             <label class="form-check-label" for="exampleCheck1">Balance sheet</label>
           </div>
           <div class="mb-3 form-check col-md-6">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="accounting.needcashFlow">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="accounting.needcashFlow"
+            name="cashFlow">
             <label class="form-check-label" for="exampleCheck1">Cash flow statement</label>
           </div>
           <div class="mb-3 form-check col-md-6">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="accounting.needChangeInEquity">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="accounting.needChangeInEquity"
+            name="changeinequity">
             <label class="form-check-label" for="exampleCheck1">Statement of changes in equity</label>
           </div>
   

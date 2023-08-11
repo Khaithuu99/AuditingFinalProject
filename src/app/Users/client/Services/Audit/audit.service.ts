@@ -26,8 +26,13 @@ export class AuditService {
   getAuditById(auditId: number): Observable<audit>{
     return this.http.get<audit>(`${url}/${auditId}`)
   }
+
   updateAudit(auditId:number,audit:audit){
     return this.http.put(`${url}/${auditId}`,audit)
+  }
+
+  updateContractStatus(id:number){
+    return this.http.put(`${url}/contractStatus/${id}`,null);
   }
 
   

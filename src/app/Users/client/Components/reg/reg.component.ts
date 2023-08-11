@@ -26,7 +26,7 @@ export class RegComponent {
   public addReg(){
     this.clientService.addClient(this.regForm.value).subscribe( data =>{
       alert('Successfullyy...!!!')
-      this.router.navigate(['client-login'])
+      this.router.navigate(['Client'])
     },
       (Error)=>{
         alert('Failed..!!!')

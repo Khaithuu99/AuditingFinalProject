@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 const URL = environment.baseurl+"/audit"
+const newUrl = environment.baseurl
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,9 @@ export class AuditService {
     return this.http.get<any[]>(`${URL}`);
   }
   
+  getAllAudits(id:any){
+    return this.http.get<any[]>(`${URL}/client/${id}`);
+  }
     
   getAuditById(auditId: number): Observable<audit>{
     return this.http.get<audit>(`${URL}/${auditId}`)
@@ -42,5 +46,19 @@ export class AuditService {
   createContract(data:any){
     return this.http.post(`${URL}/contract`, data);
   }
+
+  viewContract(id:any){
+    return this.http.get<any>(`${newUrl}/contract/client/either/${id}`);
+
+  }
+
+  setEngagement(id:any, data:any){
+    return this.http.put(`${URL}/engagementDate/${id}`, data);
+  }
+
+  countAudit(){
+    return this.http.get<any>(`${URL}/count`);
+  }
+ 
 
 }

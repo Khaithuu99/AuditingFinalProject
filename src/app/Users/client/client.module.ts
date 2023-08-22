@@ -18,6 +18,13 @@ import { UpdateAccountingComponent } from './Components/update-accounting/update
 import { UpdateAuditComponent } from './Components/update-audit/update-audit.component';
 import { UpdateConsaltantComponent } from './Components/update-consaltant/update-consaltant.component';
 import { NgxPrintModule } from 'ngx-print';
+import { AccountingContractReadComponent } from './Components/accounting-contract-read/accounting-contract-read.component';
+import { AuditContractReadComponent } from './Components/audit-contract-read/audit-contract-read.component';
+import { ConsultancyContractReadComponent } from './Components/consultancy-contract-read/consultancy-contract-read.component';
+import { AuditContractsListComponent } from './Components/audit-contracts-list/audit-contracts-list.component';
+import { AccountingContractListComponent } from './Components/accounting-contract-list/accounting-contract-list.component';
+import { UpdateRegComponent } from './Components/update-reg/update-reg.component';
+import { ContactsComponent } from './Services/contacts/contacts.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +39,14 @@ import { NgxPrintModule } from 'ngx-print';
     ConsultancyContractViewComponent,
     UpdateAccountingComponent,
     UpdateAuditComponent,
-    UpdateConsaltantComponent
+    UpdateConsaltantComponent,
+    AccountingContractReadComponent,
+    AuditContractReadComponent,
+    ConsultancyContractReadComponent,
+    AuditContractsListComponent,
+    AccountingContractListComponent,
+    UpdateRegComponent,
+    ContactsComponent
   ],
   imports: [
     CommonModule,

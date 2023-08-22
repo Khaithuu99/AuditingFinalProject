@@ -19,12 +19,19 @@ import { UpdateAuditComponent } from './Components/update-audit/update-audit.com
 import { UpdateConsaltantComponent } from './Components/update-consaltant/update-consaltant.component';
 import { UpdateAccountingComponent } from './Components/update-accounting/update-accounting.component';
 import { ClientContractsListComponent } from './Components/client-contracts-list/client-contracts-list.component';
+import { AccountingContractReadComponent } from './Components/accounting-contract-read/accounting-contract-read.component';
+import { AuditContractReadComponent } from './Components/audit-contract-read/audit-contract-read.component';
+import { ConsultancyContractReadComponent } from './Components/consultancy-contract-read/consultancy-contract-read.component';
+import { AuditContractsListComponent } from './Components/audit-contracts-list/audit-contracts-list.component';
+import { AccountingContractListComponent } from './Components/accounting-contract-list/accounting-contract-list.component';
+import { ClientAuthGuard } from './PathAuth/client-auth.guard';
+import { UpdateRegComponent } from './Components/update-reg/update-reg.component';
 
 
 const routes: Routes = [
   {path: '', component:ClientLoginComponent},
   {path: 'reg', component: RegComponent },
-  {path: 'nav', component:NavUserComponent , children:[
+  {path: 'nav', component:NavUserComponent, canActivate:[ClientAuthGuard] , children:[
     {path:'profile',component:ProfileUserComponent},
     {path:'request',component:RequestsComponent},
     {path:"audit",component:AuditFormComponent},
@@ -39,7 +46,12 @@ const routes: Routes = [
   {path:"update-account",component:UpdateAccountingComponent},
   {path:"update-consaltant",component:UpdateConsaltantComponent},
   {path:"updateaudit",component:UpdateAuditComponent},
-  {path:"client-contract", component:ClientContractsListComponent}
+  {path:"consultancy-contracts-list", component:ClientContractsListComponent},
+  {path:"audit-contracts-list",component:AuditContractsListComponent},
+  {path:"account-contracts-list",component:AccountingContractListComponent},
+  {path:"account-contract-read", component:AccountingContractReadComponent},
+  {path:"audit-contract-read",component:AuditContractReadComponent},
+  {path:"consultancy-contract-read",component:ConsultancyContractReadComponent}
 
   ]}
 ];

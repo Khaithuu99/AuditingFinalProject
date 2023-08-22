@@ -1,8 +1,9 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgbDateStruct, NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { audit } from 'rxjs';
-import { AuditService } from 'src/app/Users/admin/Services/audit.service';
+import { AuditService } from 'src/app/Users/admin/Services/Audit/audit.service';
 
 @Component({
   selector: 'app-audit-table',
@@ -11,13 +12,22 @@ import { AuditService } from 'src/app/Users/admin/Services/audit.service';
 })
 export class AuditTableComponent{
   audit!:any[]
+  model!: NgbDateStruct;
+  modalRef: NgbModalRef | undefined;
  
-  constructor(private elementRef: ElementRef, private auditService: AuditService, private router: Router){}
+  constructor(private elementRef: ElementRef, private auditService: AuditService, private router: Router,
+    config: NgbModalConfig, private modalService: NgbModal) {
+      // customize default values of modals used by this component tree
+      config.backdrop = 'static';
+      config.keyboard = false;}
 
   ngOnInit(): void{
     this.getAudit();
   }
  
+  open(content:any) {
+		this.modalService.open(content);
+	}
 
   public getAudit(){
     this.auditService.getAudit().subscribe( data =>{
@@ -92,4 +102,19 @@ export class AuditTableComponent{
     this.router.navigate(['Admin/navigation/audit-contract',{id}])
    
   }
+
+  engageForm: FormGroup = new FormGroup({
+    engagementDate: new FormControl ('', [Validators.required])
+  });
+
+  engagement: any;
+  setEngagement(id:any){
+    this.auditService.setEngagement(id, this.engageForm.value).subscribe(respo=>{
+      alert("Engagement date set Successfully");
+      this.getAudit();
+    }, error=>{
+      alert("Failed to set engagement error")
+    })
+  }
+
 }

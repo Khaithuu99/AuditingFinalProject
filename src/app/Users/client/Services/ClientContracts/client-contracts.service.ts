@@ -13,4 +13,16 @@ export class ClientContractsService {
   getAllContracts(id:any){
     return this.http.get<any[]>(`${url}/client/${id}`);
   }
+
+  getAuditContracts(id:any){
+    return this.http.get<any[]>(`${url}/audit/${id}`);
+  }
+
+  getAccountingContracts(id:any){
+    return this.http.get<any[]>(`${url}/accounting/${id}`);
+  }
+
+  getConsultancyContracts(id:any){
+    return this.http.get<any[]>(`${url}/consultancy/${id}`);
+  }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { client } from 'src/app/Users/client/Services/client';
-import { ConsaltantService } from '../../Services/consaltant.service';
+import { ConsaltantService } from '../../Services/Consultancy/consaltant.service';
 import { ClientService } from 'src/app/Users/client/Services/client.service';
 
 @Component({

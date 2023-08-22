@@ -44,5 +44,24 @@ agreeContract() {
   }
 }
 
+cancelContract() {
+  const confirmation = window.confirm("Are you sure you want to cancel the contract?");
+  
+  if (confirmation) {
+    this.auditService.cancelContractStatus(this.route.snapshot.params['id']).subscribe(
+      response => {
+        alert("Contract cancelled Successfully");
+        this.router.navigate(['Client/nav/audit-list'])
+      },
+      error => {
+        alert("Failed to cancel the contract");
+      }
+    );
+  } else {
+    // User clicked "Cancel" on the confirmation prompt.
+    // You can optionally provide some feedback to the user here.
+  }
+}
+
 
 }

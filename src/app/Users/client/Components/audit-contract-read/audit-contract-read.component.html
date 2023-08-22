@@ -1,0 +1,58 @@
+
+<div class="page" id="print-section">
+    <header class="header">
+      <h1>Audit Engagement Contract</h1>
+    </header>
+    
+    <main class="content" >
+      <h5>Contract Details</h5>
+      <hr>
+      <p><strong>Contract Title:</strong> {{ contract.contractTitle }}</p>
+      <p><strong>Contract Description:</strong> {{ contract.contractDescription }}</p>
+      <p><strong>Contract Type:</strong> {{ contract.contractType }}</p>
+      <p><strong>Start Date:</strong> {{ contract.startDate }}</p>
+      <p><strong>End Date:</strong> {{ contract.endDate }}</p>
+
+      <h5>Client Details</h5>
+      <hr>
+      <p><strong>Firm Name</strong> {{ contract.firmName }}</p>
+      <p><strong>Firm Address</strong> {{ contract.firmAddress }}</p>
+      <p><strong>Firm Contacts</strong> {{ contract.firmPhone }}</p>
+
+      <h5>Audit Details</h5>
+      <hr>
+
+      <p><strong>Audit Type:</strong> {{ contract.auditingType }}</p>
+      <p><strong>Audit Scope:</strong> {{ contract.areaAudit }}</p>
+      <p><strong>Audit Standard:</strong> {{ contract.auditingStandard }}</p>
+   
+      
+      <h5>Contract Binding Details</h5>
+      <hr>
+      
+      <h5><strong> Terms and Conditions</strong></h5>
+      <p>{{ contract.termsAndConditions }}</p>
+      
+      <h5><strong>Pricing Details</strong></h5>
+      <p>{{ contract.pricingDetails }}</p>
+      
+      <h5><strong>Additional Notes</strong></h5>
+      <p>{{ contract.additionalNotes }}</p>
+    </main>
+    
+    <footer class="footer hide-on-print">
+      <p>Contact: email@example.com</p>
+      <button
+       mat-raised-button 
+       class="submit-button"
+       [useExistingCss]="true"
+       printSectionId="print-section"
+       [printStyle]="{button : {'display': 'none'}}"
+       ngxPrint
+       >Print Contract</button>
+     
+
+     
+    </footer>
+  </div>
+  

@@ -1,7 +1,8 @@
 import { Component, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { Registration } from '../../Services/Registration';
-import { RegistrationService } from '../../Services/registration.service';
+import { Registration } from '../../Services/Admin/Registration';
+import { RegistrationService } from '../../Services/Admin/registration.service';
+
 
 @Component({
   selector: 'app-profile',

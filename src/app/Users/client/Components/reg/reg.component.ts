@@ -14,10 +14,12 @@ export class RegComponent {
   regForm : FormGroup = new FormGroup({
     firmName: new FormControl('', [Validators.required]),
     firmType: new FormControl('', [Validators.required]),
-    firmEmail: new FormControl('', [Validators.required]),
+    firmEmail: new FormControl('', [Validators.required, Validators.email]),
     firmAddress: new FormControl('', [Validators.required]),
     firmPhone: new FormControl('', [Validators.required]),
-    firmPassword: new FormControl('', [Validators.required])
+    firmPassword: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    repeatPassword:new FormControl('', [Validators.required, Validators.minLength(8)]),
+
 
   })
 

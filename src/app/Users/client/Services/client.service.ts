@@ -29,10 +29,18 @@ export class ClientService {
   addClient(data:any){
     return  this.http.post(`${URL}`, data);
   }
+
+  updateClient(Id:number,client: any){
+    return this.http.put(`${URL}/${Id}`,client)
+  }
   
   deleteClient(clientId:number){
     return this.http.delete(`${URL}/${clientId}`) 
   }
 
+  countClient(){
+    return this.http.get<any>(`${URL}/count`);
+  }
+ 
 
 }

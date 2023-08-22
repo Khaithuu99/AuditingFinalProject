@@ -4,9 +4,10 @@
             <h3 class="fs-4 mb-3">My Auditing Requests</h3>
     
         </div>
-        <!-- <div class="col-md-6">
-            <button [routerLink]="['../audit']" class="btn btn-success" style="float: right;">Add Audit</button>
-        </div> -->
+        <div class="col-md-6">
+            <button mat-raised-button color="primary" [routerLink]="['../audit']" style="float: right;">Add Request</button>
+            <button mat-raised-button color="teal" [routerLink]="['../audit-contracts-list']" style="float: right;">View Contracts</button>
+        </div>
     </div>    
         <div class="row my-5">
             <div class="col">
@@ -42,8 +43,7 @@
                       <td>{{ x.engagementDate }}</td>
                       <td>
                           <button class="btn" (click)="updateAudit(x.auditId)"><i class="fas fa-edit"></i></button>
-                          <!-- <button class="btn" (click)="openDeleteConfirmation(x.auditId)"><i class="fas fa-trash"></i></button> -->
-                        <button mat-raised-button color="primary" [disabled]="x.contractStatus !== 'Generated'" (click)="view(x.auditId)">
+                        <button mat-raised-button color="teal" [disabled]="x.contractStatus !== 'Generated'" (click)="view(x.auditId)">
                             <i class="fas fa-eye"></i> View Contract
                           </button>                      
                     </td>

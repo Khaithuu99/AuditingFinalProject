@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { client } from '../../Services/client';
 import { ClientService } from '../../Services/client.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class ProfileUserComponent {
 
   client: client = new client();
 
-  constructor(private clientService: ClientService){}
+  constructor(private clientService: ClientService, private router: Router){}
 
   ngOnInit(): void{
     this.fetchClient();
@@ -24,6 +25,9 @@ export class ProfileUserComponent {
       console.log(response)
      
     })
+  }
+  updateProfile(id: any){
+    this.router.navigate(['Client/update-reg',{id}])
   }
 
 }

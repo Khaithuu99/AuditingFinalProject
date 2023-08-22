@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
-import { RegistrationService } from '../../Services/registration.service';
 import { Router } from '@angular/router';
+import { RegistrationService } from '../../Services/Admin/registration.service';
 
 
 @Component({

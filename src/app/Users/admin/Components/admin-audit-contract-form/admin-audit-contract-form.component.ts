@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AuditService } from '../../Services/audit.service';
-import { ActivatedRoute } from '@angular/router';
+import { AuditService } from '../../Services/Audit/audit.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-audit-contract-form',
@@ -11,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class AdminAuditContractFormComponent {
   auditContractForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private auditService:AuditService, private route:ActivatedRoute) {}
+  constructor(private formBuilder: FormBuilder, private auditService:AuditService, 
+    private route:ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
     this.auditContractForm = this.formBuilder.group({
@@ -29,6 +30,7 @@ export class AdminAuditContractFormComponent {
 
   createContract(){
     this.auditService.createContract(this.auditContractForm.value).subscribe(response=>{
+      this.router.navigate(['Admin/navigation/audit-table']);
       alert('Contract created successfully!')
     }, error=>{
       alert('Failed to create contract!')

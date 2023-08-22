@@ -38,7 +38,12 @@
                         <td>{{x.firmPhone}}</td>
                         <td>{{x.contractStatus}}</td>
                         <td>{{x.engagementDate}}</td>
-                        <td></td>
+                        <td>
+                            <button mat-raised-button color="primary" (click)="view(x.consultancyId)">view Contracts</button>
+                            <button mat-raised-button color="primary" *ngIf="x.contractStatus == 'cancel'" >
+                                <mat-icon>description</mat-icon>Contract Canceled
+                                 </button>
+                        </td>
 
                     </tr>
                     

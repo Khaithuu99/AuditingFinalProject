@@ -32,4 +32,7 @@ export class ClientConsultantListComponent {
     this.router.navigate(['Client/nav/update-consaltant/',{consultancyId}])
   }
 
+
+
+
 }

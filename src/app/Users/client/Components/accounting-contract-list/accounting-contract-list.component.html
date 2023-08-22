@@ -1,0 +1,47 @@
+<div class="container mt-3 shadow-md">
+    <div class="row my-5">
+        <div class="col-md-6">
+            <h3 class="fs-4 mb-3">Contracts</h3>
+    
+        </div>
+    </div>    
+        <div class="row my-5">
+            <div class="col">
+                <table class="table bg-white rounded shadow-sm  table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col" width="50">#</th>
+                        <th scope="col">contractTitle</th>
+                        <th scope="col">contractType</th>
+                        <th scope="col">startDate</th>
+                        <th scope="col">endDate</th>
+                        <th scope="col">contractStatus</th>
+                        <th scope="col">engagementDate</th>          
+                        <th scope="col">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let x of contracts; let y = index;">
+                        <td>{{y+1}}</td>
+                        <td>{{x.contractTitle}}</td>
+                        <td>{{x.contractType}}</td>
+                        <td>{{x.startDate}}</td>
+                        <td>{{x.endDate}}</td>
+                        <td>{{x.contractStatus}}</td>
+                        <td>{{x.engagementDate}}</td>
+                        <td>
+                            <button mat-raised-button color="teal" (click)="view(x.accountId)"> Read</button>
+                        </td>
+
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    
+    </div>
+    
+    
+</div>
+

@@ -39,6 +39,7 @@ import { ClientLoginComponent } from './Users/client/Components/client-login/cli
 import { CommonModule } from '@angular/common';
 import { RequestsComponent } from './Users/client/Components/requests/requests.component';
 import { NgxPrintModule } from 'ngx-print';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -79,7 +80,8 @@ import { NgxPrintModule } from 'ngx-print';
     MatListModule,
     MatButtonModule, 
     MatMenuModule,
-    NgxPrintModule
+    NgxPrintModule,
+    NgbModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

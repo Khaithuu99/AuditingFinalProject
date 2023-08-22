@@ -21,7 +21,9 @@
                     <th scope="col">Consultancy Date</th>
                     <th scope="col">Consultancy</th>
                     <th scope="col">Approval Status</th>
-                    <th scope="col">Contract Status</th>          
+                    <th scope="col">Contract Status</th>
+                    <th scope="col">Engagement Date</th>
+            
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -35,19 +37,70 @@
                     <td>{{x.consultancyType}}</td>
                     <td>{{x.approvalStatus}}</td>
                     <td>{{x.contractStatus}}</td>
+                    <td>{{x.engagementDate}}</td>
                     <td>
                         <!-- <button class="btn" (click)="updateConsultant(x.consultancyId)"><i class="fas fa-edit"></i></button> -->
                         <button class="btn" (click)=" openDeleteConfirmation(x.consultancyId)"><i class="fas fa-trash"></i></button>
                         <button class="btn" (click)="viewConsultancy(x.consultancyId)" ><i class="fas fa-eye"></i></button>
 
-                        <button mat-raised-button color="primary" (click)=" openApprovalConfirmation(x.consultancyId)" >
+                        <button mat-raised-button color="primary" (click)=" openApprovalConfirmation(x.consultancyId)" 
+                        *ngIf="x.approvalStatus == 'Not Approved'">
                             <mat-icon>done</mat-icon>Approve
                           </button> 
 
-                        <button mat-raised-button color="primary" [disabled]="x.approvalStatus !== 'Approved'"
-                         (click)="goToContract(x.consultancyId)" >
+                        <button mat-raised-button color="primary" (click)="goToContract(x.consultancyId)" 
+                        *ngIf="x.contractStatus !== 'Agreed and Submitted' && x.contractStatus !== 'Generated' " >
                          <mat-icon>description</mat-icon>Contract
                           </button> 
+
+                          <button mat-raised-button 
+                          color="primary" 
+                          *ngIf="x.contractStatus == 'Agreed and Submitted'" 
+                          (click)="open(content)" >
+                              <mat-icon>date</mat-icon>Set Date
+                               </button>
+  
+                               <ng-template #content let-c="close" let-d="dismiss">
+                                  <div class="modal-header">
+                                      <h4 class="modal-title" id="modal-basic-title">Setting Date Of Engagement!</h4>
+                                      <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                      <form [formGroup]="engageForm">
+                                      <div class="row">
+                                          <div class="col-12">
+                                              <label for="date"> Firm </label>
+                                              <div class="input-group">
+                                                  <input class="form-control" placeholder="Firm Name" value="{{x.firmName}}" type="text" />
+                              
+                                              </div>
+                                          </div>
+                                          <div class="col-12">
+                                              <label for="date">Contract Status</label>
+                                              <div class="input-group">
+                                                 <input class="form-control" placeholder="Contract Status" value="{{x.contractStatus}}" type="text" />
+                                              </div>
+                                          </div>
+                                          <div class="col-12">
+                                              <label for="date">Financial Year</label>
+                                              <div class="input-group">
+                                                 <input class="form-control" placeholder="yyyy-mm-dd" value="{{x.financialYear}}" type="date" />
+                                              </div>
+                                          </div>
+                                          
+                                          <div class="col-12">
+                                              <label for="date"> Engagement Date</label>
+                                              <div class="input-group">
+                                                 <input class="form-control" placeholder="yyyy-mm-dd" type="date" formControlName="engagementDate" />
+                                              </div>
+                                          </div>
+                                          </div>
+                                          <button mat-raised-button color="primary" type="button" (click)="c('Save click')" (click)="setEngagement(x.auditId)" style="float: right; margin-top: 8px;">Set</button>
+                              
+                                      </form>
+                                  </div>
+                                  
+                              </ng-template>
 
                     </td>
                 </tr>
@@ -55,7 +108,6 @@
         </table>
     </div>
 </div>
-
-
-
 </div>
+
+

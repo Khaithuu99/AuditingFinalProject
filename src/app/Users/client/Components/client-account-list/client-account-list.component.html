@@ -56,13 +56,12 @@
                       <td>{{ x.contractStatus }}</td>
                       <td>{{ x.engagementDate }}</td>
                       <td>
-                         <button class="btn" (click)="updateAccounting(x.accountId)"><i class="fas fa-edit"></i></button>
-                         <!-- <button class="btn" (click)="openDeleteConfirmation(x.accountId)"><i class="fas fa-trash"></i></button> -->
-                        
+                         <button class="btn" (click)="updateAccounting(x.accountId)"><i class="fas fa-edit"></i></button>                        
                         <button mat-raised-button color="primary" [disabled]="x.contractStatus !== 'Generated'" (click)=" view(x.accountId)">
                             <i class="fas fa-eye"></i> View Contract
                           </button>  
-                                              </td>
+                          
+                        </td>
                     </tr>
                   </tbody>
             </table>

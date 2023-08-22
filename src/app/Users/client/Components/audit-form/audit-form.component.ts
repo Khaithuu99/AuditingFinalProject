@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuditService } from 'src/app/Users/admin/Services/audit.service';
+import { AuditService } from 'src/app/Users/admin/Services/Audit/audit.service';
 
 @Component({
   selector: 'app-audit-form',

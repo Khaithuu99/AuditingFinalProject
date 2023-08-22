@@ -35,4 +35,13 @@ export class ConsultancyService {
     return this.http.put(`${url}/contractStatus/${id}`,null);
   }
 
+  cancelContractStatus(id:number){
+    return this.http.put(`${url}/contractCancel/${id}`,null);
+  }
+
+  deleteConsultant(consultancyId:number){
+    return this.http.delete(`${URL}/${consultancyId}`) 
+  }
+
+
 }

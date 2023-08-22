@@ -1,6 +1,8 @@
 import { Component, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { ConsaltantService } from '../../Services/consaltant.service';
+import { ConsaltantService } from '../../Services/Consultancy/consaltant.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NgbDateStruct, NgbModalRef, NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -11,14 +13,26 @@ import { ConsaltantService } from '../../Services/consaltant.service';
 export class ConsaltantTableComponent {
   
   consaltant!:any[]
+  model!: NgbDateStruct;
+  modalRef: NgbModalRef | undefined;
+ 
  
   constructor(private elementRef: ElementRef, 
     private consaltantService: ConsaltantService, 
-    private router: Router){}
+    private router: Router,
+    config: NgbModalConfig, private modalService: NgbModal) {
+      // customize default values of modals used by this component tree
+      config.backdrop = 'static';
+      config.keyboard = false;}
+
 
   ngOnInit(): void{
     this.getConsultant();
   }
+
+  open(content:any) {
+		this.modalService.open(content);
+	}
 
   public getConsultant(){
     this.consaltantService.getConsultant().subscribe( data =>{
@@ -99,7 +113,19 @@ export class ConsaltantTableComponent {
     this.router.navigate(['Admin/navigation/consultancy-contract',{id}])
   }
 
+  engageForm: FormGroup = new FormGroup({
+    engagementDate: new FormControl ('', [Validators.required])
+  });
 
+  engagement: any;
+  setEngagement(id:any){
+    this.consaltantService.setEngagement(id, this.engageForm.value).subscribe(respo=>{
+      alert("Engagement date set Successfully");
+      this.getConsultant();
+    }, error=>{
+      alert("Failed to set engagement error")
+    })
+  }
 
 
 }

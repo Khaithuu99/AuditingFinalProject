@@ -44,8 +44,7 @@
                       <td>{{ x.engagementDate }}</td>
                       <td>
                         <button class="btn" (click)="updateConsultant(x.consultancyId)"><i class="fas fa-edit"></i></button>
-                        <!-- <button class="btn" (click)=" openDeleteConfirmation(x.consultancyId)"><i class="fas fa-trash"></i></button> -->
-                        <button mat-raised-button color="primary" [disabled]="x.contractStatus !== 'Generated'" (click)=" view(x.consultancyId)" >
+                        <button mat-raised-button color="teal" [disabled]="x.contractStatus !== 'Generated'" (click)=" view(x.consultancyId)" >
                             <i class="fas fa-eye"></i> View Contract
                           </button>  
                                               

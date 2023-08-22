@@ -33,5 +33,8 @@ export class ClientAuditListComponent {
     this.router.navigate(['Client/nav/updateaudit',{auditId}])
   }
 
+  
+ 
+
 
 }

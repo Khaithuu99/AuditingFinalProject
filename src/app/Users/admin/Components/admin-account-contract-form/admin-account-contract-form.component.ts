@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { AccountingService } from '../../Services/accounting.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { AccountingService } from '../../Services/Accounting/accounting.service';
 
 @Component({
   selector: 'app-admin-account-contract-form',
@@ -11,7 +11,8 @@ import { ActivatedRoute } from '@angular/router';
 export class AdminAccountContractFormComponent {
   accountContractForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private accountService:AccountingService, private route: ActivatedRoute) {}
+  constructor(private formBuilder: FormBuilder, private accountService:AccountingService, 
+    private route: ActivatedRoute,  private router: Router) {}
 
   ngOnInit() {
     this.accountContractForm = this.formBuilder.group({
@@ -29,6 +30,7 @@ export class AdminAccountContractFormComponent {
 
   createContract(){
     this.accountService.createContract(this.accountContractForm.value).subscribe(response=>{
+      this.router.navigate(['Admin/navigation/account-table']);
       alert('Contract created successfully!')
     }, error=>{
       alert('Failed to create contract!')

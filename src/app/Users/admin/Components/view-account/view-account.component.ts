@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { client } from 'src/app/Users/client/Services/client';
 import { ClientService } from 'src/app/Users/client/Services/client.service';
-import { AccountingService } from '../../Services/accounting.service';
 import { ActivatedRoute } from '@angular/router';
+import { AccountingService } from '../../Services/Accounting/accounting.service';
 
 @Component({
   selector: 'app-view-account',

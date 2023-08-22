@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { ConsaltantService } from '../../Services/Consultancy/consaltant.service';
 import { AdminContractsService } from '../../Services/AdminContracts/admin-contracts.service';
 
 @Component({
@@ -8,18 +10,23 @@ import { AdminContractsService } from '../../Services/AdminContracts/admin-contr
 })
 export class AdminContractsListComponent {
 
-  constructor(private contractService:AdminContractsService){}
+  constructor(private consultancyService:ConsaltantService, private router:Router, private contractService: AdminContractsService){}
 
   ngOnInit(){
-    this.getAllContracts();
+    this.getConsultancy();
   }
 
   contracts!: any[];
-  getAllContracts(){
-    this.contractService.getAllContracts().subscribe(data=>{
-this.contracts = data;
-console.log(data);
+  getConsultancy(){
+    this.contractService.getConsultancyContracts(localStorage.getItem("clientId")).subscribe(data=>{
+      this.contracts = data;
+      console.log(data);
     })
   }
+
+  view(id:any){
+    this.router.navigate(['Admin/navigation/consultancy-contracts-view', {id}])
+  }
+
 
 }

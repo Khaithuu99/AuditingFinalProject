@@ -38,4 +38,8 @@ export class AccountingService {
   updateContractStatus(id:number){
     return this.http.put(`${url}/contractStatus/${id}`,null);
   }
+
+  cancelContractStatus(id:number){
+    return this.http.put(`${url}/contractCancel/${id}`,null);
+  }
 }

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ConsaltantService } from 'src/app/Users/admin/Services/consaltant.service';
+import { ConsaltantService } from 'src/app/Users/admin/Services/Consultancy/consaltant.service';
 
 @Component({
   selector: 'app-consaltant-form',

@@ -1,10 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { accounting } from '../../client/Services/Accounting/accounting';
 import { Observable } from 'rxjs';
+import { accounting } from './accounting';
 
 const URL = environment.baseurl+"/accounting"
+const newUrl = environment.baseurl
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +36,24 @@ export class AccountingService {
 
   createContract(data:any){
     return this.http.post(`${URL}/contract`, data);
+  }
+
+  getAllAccounts(id:any){
+    return this.http.get<any[]>(`${URL}/client/${id}`);
+
+  }
+
+  viewContract(id:any){
+    return this.http.get<any>(`${newUrl}/contract/client/either/${id}`);
+
+  }
+
+  setEngagement(id:any, data:any){
+    return this.http.put(`${URL}/engagementDate/${id}`, data);
+  }
+
+  countAccount(){
+    return this.http.get<any>(`${URL}/count`);
   }
 
 }

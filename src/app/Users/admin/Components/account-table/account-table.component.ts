@@ -1,6 +1,8 @@
 import { Component, ElementRef } from '@angular/core';
-import { AccountingService } from '../../Services/accounting.service';
 import { Router } from '@angular/router';
+import { AccountingService } from '../../Services/Accounting/accounting.service';
+import { NgbDateStruct, NgbModal, NgbModalConfig, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-account-table',
@@ -9,12 +11,22 @@ import { Router } from '@angular/router';
 })
 export class AccountTableComponent {
   accounting!: any[]
+  model!: NgbDateStruct;
+  modalRef: NgbModalRef | undefined;
 
-  constructor(private elementRef: ElementRef, private accountingServices: AccountingService, private router: Router){}
+  constructor(private elementRef: ElementRef, private accountingServices: AccountingService, private router: Router,
+    config: NgbModalConfig, private modalService: NgbModal) {
+      // customize default values of modals used by this component tree
+      config.backdrop = 'static';
+      config.keyboard = false;}
 
   ngOnInit(): void{
     this.getAccounting();
   }
+
+  open(content:any) {
+		this.modalService.open(content);
+	}
 
   public getAccounting(){
     this.accountingServices.getAccount().subscribe( data =>{
@@ -86,4 +98,20 @@ export class AccountTableComponent {
   goToContract(id:number){
     this.router.navigate(['Admin/navigation/account-contract',{id}]);
   }
+
+  engageForm: FormGroup = new FormGroup({
+    engagementDate: new FormControl ('', [Validators.required])
+  });
+
+  engagement: any;
+  setEngagement(id:any){
+    this.accountingServices.setEngagement(id, this.engageForm.value).subscribe(respo=>{
+      alert("Engagement date set Successfully");
+      this.getAccounting();
+    }, error=>{
+      alert("Failed to set engagement error")
+    })
+  }
 }
+
+

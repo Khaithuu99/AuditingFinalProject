@@ -7,6 +7,7 @@ import { consaltant } from './consaltant';
 
 
 const URL = environment.baseurl+"/consultancy"
+const newUrl = environment.baseurl
 
 
 @Injectable({
@@ -18,6 +19,11 @@ export class ConsaltantService {
 
   getConsultant(){
     return this.http.get<any[]>(`${URL}`);
+  }
+
+  getAllConsultancy(id:any){
+    return this.http.get<any[]>(`${URL}/client/${id}`);
+    
   }
     
   getConsultantById(consultancyId: number): Observable<consaltant>{
@@ -43,5 +49,17 @@ export class ConsaltantService {
     return this.http.post(`${URL}/contract`, data);
   }
 
+  viewContract(id:any){
+    return this.http.get<any>(`${newUrl}/contract/client/either/${id}`);
 
+  }
+
+  setEngagement(id:any, data:any){
+    return this.http.put(`${URL}/engagementDate/${id}`, data);
+  }
+
+  countConsultancy(){
+    return this.http.get<any>(`${URL}/count`);
+  }
+ 
 }

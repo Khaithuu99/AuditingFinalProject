@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { client } from 'src/app/Users/client/Services/client';
 import { ClientService } from 'src/app/Users/client/Services/client.service';
-import { AuditService } from '../../Services/audit.service';
+import { AuditService } from '../../Services/Audit/audit.service';
 
 @Component({
   selector: 'app-view-audit',

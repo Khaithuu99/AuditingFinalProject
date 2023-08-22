@@ -3,30 +3,31 @@
         <div class="col-md-3">
             <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                 <div>
-                    <!-- <h3 class="fs-2">720</h3> -->
+                    <h3 class="fs-2">{{audits}}</h3>
                     <a [routerLink]="['audit-table']" class="fs-5">Auditing</a>
                 </div>
-                <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
+                
+                <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
             </div>
         </div>
 
         <div class="col-md-3">
             <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                 <div>
-                    <!-- <h3 class="fs-2">4920</h3> -->
-                    <p class="fs-5">compiance</p>
+                    <h3 class="fs-2">{{consultancy}}</h3>
+                    <a [routerLink]="['consaltant-table']" class="fs-5">Consultancy</a>
                 </div>
+                <i class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i>            </div>
+        </div>
+
+        <div class="col-md-3">
+            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
+                <div>
+                    <h3 class="fs-2">{{accounts}}</h3>
+                    <a [routerLink]="['account-table']" class="fs-5">Accounting</a>
+                </div>
+                
                 <i class="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-            </div>
-        </div>
-
-        <div class="col-md-3">
-            <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
-                <div>
-                    <!-- <h3 class="fs-2">99</h3> -->
-                    <p class="fs-5">Accounting</p>
-                </div>
-                <i class="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i>
             </div>
         </div>
 
@@ -34,12 +35,12 @@
             
             <div class="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
                 <div>
-                    <a [routerLink]="['navigation/consaltant-table']" class="fs-5">
-                    Consultancy
+                    <h3 class="fs-2">{{clients}}</h3>
+                    <a [routerLink]="['/consaltant-table']" class="fs-5">
+                    Clients
                     </a>
                 </div>
-                <i class="fas fa-chart-line fs-1 primary-text border rounded-full secondary-bg p-3"></i>
-            </div>
+                <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>            </div>
     
         </div>
     </div>

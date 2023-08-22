@@ -25,6 +25,13 @@ import { AdminContractsListComponent } from './Components/admin-contracts-list/a
 import { AdminAuditContractFormComponent } from './Components/admin-audit-contract-form/admin-audit-contract-form.component';
 import { AdminAccountContractFormComponent } from './Components/admin-account-contract-form/admin-account-contract-form.component';
 import { AdminContractFormComponent } from './Components/admin-contract-form/admin-contract-form.component';
+import { AdminAuditContractViewComponent } from './Components/admin-audit-contract-view/admin-audit-contract-view.component';
+import { AdminAccountContractViewComponent } from './Components/admin-account-contract-view/admin-account-contract-view.component';
+import { AdminAccountContractListComponent } from './Components/admin-account-contract-list/admin-account-contract-list.component';
+import { AdminAuditContractListComponent } from './Components/admin-audit-contract-list/admin-audit-contract-list.component';
+import { AdminConsultancyContractViewComponent } from './Components/admin-consultancy-contract-view/admin-consultancy-contract-view.component';
+import { NgxPrintModule } from 'ngx-print';
+import { NgbDatepickerModule, NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -44,6 +51,11 @@ import { AdminContractFormComponent } from './Components/admin-contract-form/adm
     AdminContractFormComponent,
     AdminAuditContractFormComponent,
     AdminAccountContractFormComponent,
+    AdminAuditContractViewComponent,
+    AdminAccountContractViewComponent,
+    AdminAccountContractListComponent,
+    AdminAuditContractListComponent,
+    AdminConsultancyContractViewComponent,
   ],
   imports: [
     CommonModule,
@@ -56,8 +68,12 @@ import { AdminContractFormComponent } from './Components/admin-contract-form/adm
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatButtonModule, 
     MatMenuModule,
+    MatButtonModule,
+    NgxPrintModule,
+    NgbModalModule,
+    NgbDatepickerModule
+  
   ]
 })
 export class AdminModule { }

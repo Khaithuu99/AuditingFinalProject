@@ -34,16 +34,5 @@ export class ClientAccountListComponent {
     console.log(accountId)
   }
   
-  // openDeleteConfirmation(accountId: number): void {
-  //   const confirmResult = window.confirm('Are you sure you want to delete this accounting?');
-
-  //   if (confirmResult) {
-  //     // User clicked OK to delete the accounting
-  //     this.deleteAccounting(accountId);
-  //   } else {
-  //     // User clicked Cancel or closed the dialog
-  //     // You can handle this case if needed, or simply ignore it
-  //   }
-  // }
-
+ 
 }

@@ -35,5 +35,12 @@ export class AuditService {
     return this.http.put(`${url}/contractStatus/${id}`,null);
   }
 
+  cancelContractStatus(id:number){
+    return this.http.put(`${url}/contractCancel/${id}`,null);
+  }
+  
+  deleteAudit(auditId:number){
+    return this.http.delete(`${URL}/${auditId}`) 
+  }
   
 }

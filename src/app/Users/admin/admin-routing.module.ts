@@ -17,13 +17,19 @@ import { AdminContractFormComponent } from './Components/admin-contract-form/adm
 import { AdminAccountContractFormComponent } from './Components/admin-account-contract-form/admin-account-contract-form.component';
 import { AdminAuditContractFormComponent } from './Components/admin-audit-contract-form/admin-audit-contract-form.component';
 import { AdminContractsListComponent } from './Components/admin-contracts-list/admin-contracts-list.component';
+import { AdminAccountContractListComponent } from './Components/admin-account-contract-list/admin-account-contract-list.component';
+import { AdminAuditContractListComponent } from './Components/admin-audit-contract-list/admin-audit-contract-list.component';
+import { AdminConsultancyContractViewComponent } from './Components/admin-consultancy-contract-view/admin-consultancy-contract-view.component';
+import { AdminAccountContractViewComponent } from './Components/admin-account-contract-view/admin-account-contract-view.component';
+import { AdminAuditContractViewComponent } from './Components/admin-audit-contract-view/admin-audit-contract-view.component';
+import { AdminAuthGuard } from './PathAuth/admin-auth.guard';
 
 
 
 const routes: Routes = [
   { path: "", component:LoginComponent },
-  {path:"navigation",component:NavigationComponent, children:[
-  {path:"home",component:HomeComponent},
+  {path:"navigation",component:NavigationComponent, canActivate:[AdminAuthGuard], children:[
+  {path:"",component:HomeComponent},
   {path:"audit-table",component:AuditTableComponent},
   {path:"consaltant-table",component:ConsaltantTableComponent},
   {path:"account-table",component:AccountTableComponent},
@@ -36,7 +42,12 @@ const routes: Routes = [
   {path:"consultancy-contract", component:AdminContractFormComponent},
   {path:"account-contract", component: AdminAccountContractFormComponent},
   {path: "audit-contract", component:AdminAuditContractFormComponent},
-  {path:"all-contracts", component:AdminContractsListComponent}
+  {path:"consultancy-contracts-list", component:AdminContractsListComponent},
+  {path:"account-contracts-list",component:AdminAccountContractListComponent},
+  {path:"audit-contracts-list",component:AdminAuditContractListComponent},
+  {path:"consultancy-contracts-view",component:AdminConsultancyContractViewComponent},
+  {path:"account-contracts-view",component:AdminAccountContractViewComponent},
+  {path:"audit-contracts-view",component:AdminAuditContractViewComponent}
 
   ]},
 

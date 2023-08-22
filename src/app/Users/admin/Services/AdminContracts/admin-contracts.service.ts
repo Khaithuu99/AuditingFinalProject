@@ -14,4 +14,16 @@ export class AdminContractsService {
   getAllContracts(){
     return this.http.get<any[]>(`${url}/all`);
   }
+  
+  getAuditContracts(id:any){
+    return this.http.get<any[]>(`${url}/audit/${id}`);
+  }
+
+  getAccountingContracts(id:any){
+    return this.http.get<any[]>(`${url}/accounting/${id}`);
+  }
+
+  getConsultancyContracts(id:any){
+    return this.http.get<any[]>(`${url}/consultancy/${id}`);
+  }
 }
